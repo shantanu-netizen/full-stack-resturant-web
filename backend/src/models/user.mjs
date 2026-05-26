@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "title is required."],
       enum: {
-        values: ["Mr", "Mrs", "Miss"],
-        message: "Only [Mr, Mrs, Miss] are allowed",
+        values: ["Mr", "Mrs", "Other"],
+        message: "Only [Mr, Mrs, Other] are allowed",
       },
     },
     email: {
