@@ -1,0 +1,22 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #182226;
+  border: 1.5px solid var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 118px;
+  background-color: #ffffff;
+  height: 48px;
+  align-items: center;
+  border: 2px solid #2c2f24;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.btn:active {
+  scale: 0.95;
+}

@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #2c2f24;
+  --primary-backgroundcolor: #474747;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

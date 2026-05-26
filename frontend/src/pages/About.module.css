@@ -1,0 +1,528 @@
+.about {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero {
+  position: relative;
+  min-height: 420px; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.playIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-bottom: 18px;
+}
+
+.heroTitle {
+  max-width: 640px;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.heroSubtitle {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(24, 34, 38, 0.78);
+}
+
+.story {
+  padding: 80px 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.images {
+  position: relative;
+  width: 430px;
+  height: 430px;
+}
+
+.bigImg {
+  width: 380px;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  display: block;
+  object-fit: cover;
+}
+
+.smallImg {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  display: block;
+  object-fit: cover;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.sectionTitleCenter {
+  text-align: center;
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 22px;
+}
+
+.paragraph {
+  line-height: 1.8;
+  color: rgba(24, 34, 38, 0.82);
+}
+
+.stats {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.statCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.statNumber {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.statLabel {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: rgba(24, 34, 38, 0.75);
+}
+
+.values {
+  padding: 10px 0 70px;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.valueCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 18px 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.valueTitle {
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.cta {
+  padding: 0 0 80px;
+}
+
+.ctaCard {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.ctaTitle {
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.ctaText {
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+}
+
+.ctaButton {
+  background: var(--gold);
+  color: #1c1c1c;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background: var(--gold-dark);
+}
+
+.assetHint {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: rgba(24, 34, 38, 0.7);
+}
+
+.footer {
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .images {
+    width: 100%;
+    height: auto;
+  }
+
+  .bigImg {
+    width: 100%;
+    height: auto;
+  }
+
+  .smallImg {
+    position: static;
+    width: 60%;
+    height: auto;
+    margin-top: 12px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .valueGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+.topSection {
+  padding: 72px 0 40px;
+}
+
+.topGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.topImageWrapper {
+  position: relative;
+  max-width: 520px;
+}
+
+.topImage {
+  width: 100%;
+  border-radius: 24px;
+  display: block;
+  object-fit: cover;
+}
+
+.visitCard {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  width: 80%;
+  background: #3f3f3f;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+.visitCard h3 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.visitCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.topText h2 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.topText p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+  color: rgba(24, 34, 38, 0.82);
+}
+
+.videoSection {
+  position: relative;
+  margin-top: 96px;
+  min-height: 380px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.playButton {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.playTriangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #d54234;
+  margin-left: 3px;
+}
+
+.videoOverlay h2 {
+  max-width: 640px;
+  font-size: 2.3rem;
+  letter-spacing: -0.02em;
+}
+
+.infoSection {
+  padding: 80px 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.infoText h2 {
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.infoText p {
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+.infoStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.infoCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 18px 22px;
+}
+
+.infoNumber {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.infoLabel {
+  font-size: 0.95rem;
+  color: rgba(24, 34, 38, 0.78);
+}
+
+.infoImageWrapper {
+  max-width: 420px;
+  justify-self: end;
+}
+
+.infoImage {
+  width: 100%;
+  border-radius: 24px;
+  display: block;
+  object-fit: cover;
+}
+
+.testimonialSection {
+  padding: 80px 0 96px;
+}
+
+.testimonialTitle {
+  text-align: center;
+  font-size: 2.3rem;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.testimonialCard {
+  background: #f9f8f5;
+  border-radius: 24px;
+  padding: 28px 28px 24px;
+}
+
+.testimonialCard h3 {
+  color: #b73a3a;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.testimonialCard p {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.testimonialFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 16px;
+}
+
+.avatarCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.customerName {
+  font-weight: 600;
+}
+
+.customerLocation {
+  font-size: 0.9rem;
+  color: rgba(24, 34, 38, 0.7);
+}
+
+@media (max-width: 900px) {
+  .topGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .topImageWrapper {
+    margin: 0 auto;
+  }
+
+  .visitCard {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .videoSection {
+    margin-top: 64px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .infoImageWrapper {
+    justify-self: stretch;
+  }
+
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+}

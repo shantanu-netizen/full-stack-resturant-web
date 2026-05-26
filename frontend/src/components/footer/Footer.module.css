@@ -1,0 +1,194 @@
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #474747;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 20px 52px;
+    display: grid;
+    grid-template-columns: 1.45fr 0.8fr 0.9fr 1.35fr;
+    gap: 56px;
+    align-items: start;
+}
+
+/* Brand column */
+.brandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brandIcon {
+    width: 52px !important;
+    height: 44px !important;
+    color: #ffffff;
+}
+
+.brandName {
+    color: #ffffff;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+}
+
+.brandDescription {
+    margin: 0;
+    max-width: 340px;
+    color: rgba(255, 255, 255, 0.72);
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.socialLink {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ad343e;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.socialLink:hover {
+    background-color: #8b2a34;
+    transform: translateY(-1px);
+}
+
+/* Link columns */
+.linksCol {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.colTitle {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.linkList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerLink {
+    color: rgba(255, 255, 255, 0.72);
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+    color: #ffffff;
+}
+
+/* Instagram */
+.instaCol {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.instaGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 320px;
+}
+
+.instaItem {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.instaItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.instaImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bottom row */
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 22px 20px 28px;
+}
+
+.copyright {
+    margin: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .inner {
+        grid-template-columns: 1.4fr 1fr;
+        gap: 40px;
+    }
+
+    .instaGrid {
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 640px) {
+    .inner {
+        grid-template-columns: 1fr;
+        padding: 60px 16px 44px;
+        gap: 34px;
+    }
+
+    .instaGrid {
+        max-width: 420px;
+        width: 100%;
+    }
+
+    .bottom {
+        padding: 18px 16px 24px;
+    }
+}

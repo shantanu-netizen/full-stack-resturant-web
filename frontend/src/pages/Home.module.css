@@ -1,0 +1,1163 @@
+.header {
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: grid;
+  place-items: center;
+  padding: 72px 20px 96px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  margin: 0;
+  color: #2c2f24;
+  font-family: playfair display;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 1.05;
+  font-size: clamp(40px, 7vw, 100px);
+}
+
+.heroSubtitle {
+  margin: 18px auto 0;
+  color: #2c2f24;
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  max-width: 537px;
+  max-height: 64px;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.heroBtn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.heroBtn:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  background: #ad343e;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(139, 58, 54, 0.22);
+}
+
+.primary:hover {
+  background: #7b332f;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.75);
+  color: #2b2b2b;
+  border-color: rgba(43, 43, 43, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(43, 43, 43, 0.75);
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 56px 16px 80px;
+    min-height: 70vh;
+  }
+
+  .heroSubtitle br {
+    display: none;
+  }
+
+  .heroBtn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+}
+
+/* Browse Our Menu Section */
+.menuSection {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 20px;
+}
+
+.menuSectionTitle {
+  margin: 0 0 60px;
+  text-align: center;
+  color: #2c2f24;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.01em;
+}
+
+.menuCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menuCard {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.menuCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.menuCardIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.menuCardIcon svg {
+  width: 40px;
+  height: 40px;
+  color: #2c2f24;
+}
+
+.menuCardTitle {
+  margin: 0 0 16px;
+  color: #2c2f24;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.menuCardDescription {
+  margin: 0 0 24px;
+  color: #666666;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.menuCardLink {
+  color: #ad343e;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.menuCardLink:hover {
+  color: #8b2a34;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .menuSection {
+    padding: 60px 16px;
+  }
+
+  .menuCards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .menuCard {
+    padding: 32px 24px;
+  }
+}
+
+/* About / We provide healthy food section */
+.aboutSection {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+}
+
+.aboutInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutImageWrap {
+  position: relative;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  min-height: 400px;
+  padding: 0 8vh 8vh 0;
+}
+
+.contactCard {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  max-width: calc(100% - 48px);
+  width: 320px;
+  background-color: #383838;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.contactCardTitle {
+  margin: 0 0 20px;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.contactCardItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.contactCardItem:last-child {
+  margin-bottom: 0;
+}
+
+.contactCardIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: #ffffff;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aboutTitle {
+  margin: 0 0 24px;
+  color: #2c2f24;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.aboutParagraph {
+  margin: 0 0 20px;
+  color: #414536;
+  font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 600;
+}
+
+.aboutParagraph2 {
+  margin: 0 0 20px;
+  color: #414536;
+  font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.aboutParagraph:last-of-type {
+  margin-bottom: 28px;
+}
+
+.aboutBtn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #ffffff;
+  color: #2c2f24;
+  border: 2px solid #2c2f24;
+  border-radius: 999px;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.aboutBtn:hover {
+  background-color: #2c2f24;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .aboutInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .aboutImageWrap {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .aboutContent {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutSection {
+    padding: 60px 16px;
+  }
+
+  .contactCard {
+    right: 16px;
+    bottom: 16px;
+    width: calc(100% - 32px);
+    max-width: 280px;
+    padding: 20px 18px;
+  }
+
+  .contactCardTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .contactCardItem {
+    font-size: 14px;
+  }
+
+  .aboutImage {
+    min-height: 320px;
+  }
+}
+
+/* Events / Unique services section */
+.eventsSection {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 20px;
+}
+
+.eventsSectionTitle {
+  margin: 0 auto 56px;
+  color: #2c2f24;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  max-width: 1200px;
+}
+
+.eventsCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eventsCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.eventsCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.eventsCardImageWrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.eventsCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.eventsCardTitle {
+  margin: 0;
+  padding: 20px 20px 8px;
+  color: #2c2f24;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.eventsCardDescription {
+  margin: 0;
+  padding: 0 20px 24px;
+  color: #666666;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+  .eventsCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .eventsSection {
+    padding: 60px 16px;
+  }
+
+  .eventsSectionTitle {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+
+  .eventsCards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .eventsCardTitle {
+    padding-top: 16px;
+    font-size: 20px;
+  }
+
+  .eventsCardDescription {
+    padding-bottom: 20px;
+    font-size: 14px;
+  }
+}
+
+/* Delivery section - Fastest Food Delivery */
+.deliverySection {
+  width: 100%;
+  background-color: #f8f6f3;
+  padding: 80px 20px;
+}
+
+.deliveryInner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 1.1fr;
+  gap: 32px;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.deliveryChefWrap {
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.deliveryChefImage {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.deliveryImagesWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.deliveryFoodImageWrap {
+  flex: 1;
+  min-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.deliveryFoodImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.deliveryContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.deliveryTitle {
+  margin: 0 0 20px;
+  color: #2c2f24;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.deliveryDescription {
+  margin: 0 0 28px;
+  color: #414536;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.deliveryFeatures {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deliveryFeature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2c2f24;
+  line-height: 1.4;
+}
+
+.deliveryFeature:last-child {
+  margin-bottom: 0;
+}
+
+.deliveryFeatureIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ad343e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deliveryFeatureIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .deliveryInner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 24px;
+  }
+
+  .deliveryChefWrap {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    min-height: 400px;
+  }
+
+  .deliveryChefImage {
+    min-height: 400px;
+  }
+
+  .deliveryImagesWrap {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .deliveryContent {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .deliverySection {
+    padding: 60px 16px;
+  }
+
+  .deliveryInner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .deliveryChefWrap {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 360px;
+  }
+
+  .deliveryChefImage {
+    min-height: 360px;
+  }
+
+  .deliveryImagesWrap {
+    grid-column: 1;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .deliveryFoodImageWrap {
+    flex: 1;
+    aspect-ratio: 1;
+  }
+
+  .deliveryContent {
+    grid-column: 1;
+  }
+
+  .deliveryFeatureIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .deliveryFeatureIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Testimonials - What Our Customers Say */
+.testimonialsSection {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 20px;
+}
+
+.testimonialsTitle {
+  margin: 0 auto 56px;
+  text-align: center;
+  color: #2c2f24;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  max-width: 1200px;
+}
+
+.testimonialsCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonialCard {
+  background-color: #fefefe;
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.testimonialCard:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.testimonialQuote {
+  margin: 0 0 16px;
+  color: #AD343E;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  font-style: bold;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.testimonialBody {
+  margin: 0 0 24px;
+  color: #414536;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.testimonialAvatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #e8e8e8;
+}
+
+.testimonialAvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonialAuthorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonialName {
+  color: #2c2f24;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.testimonialLocation {
+  color: #888888;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .testimonialsCards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonialsSection {
+    padding: 60px 16px;
+  }
+
+  .testimonialsTitle {
+    margin-bottom: 40px;
+  }
+
+  .testimonialCard {
+    padding: 24px 20px;
+  }
+
+  .testimonialQuote {
+    font-size: 18px;
+  }
+
+  .testimonialBody {
+    font-size: 14px;
+  }
+}
+
+/* Blog & Articles section */
+.blogSection {
+  width: 100%;
+  background-color: #f8f6f3;
+  padding: 80px 20px;
+}
+
+.blogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+}
+
+.blogTitle {
+  margin: 0;
+  color: #2c2f24;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.blogReadAllBtn {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  background-color: #ad343e;
+  color: #ffffff;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(173, 52, 62, 0.25);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.blogReadAllBtn:hover {
+  background-color: #8b2a34;
+  box-shadow: 0 6px 20px rgba(173, 52, 62, 0.3);
+}
+
+.blogReadAllBtn:active {
+  transform: translateY(1px);
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blogFeaturedCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.blogFeaturedCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.blogCardImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.blogCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blogCardContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogDate {
+  color: #888888;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.blogCardTitle {
+  margin: 0 0 12px;
+  color: #2c2f24;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.35;
+}
+
+.blogExcerpt {
+  margin: 0;
+  color: #666666;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.blogSmallCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+}
+
+.blogSmallCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.blogSmallCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.blogSmallCardImageWrap {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.blogSmallCard .blogCardContent {
+  padding: 20px;
+}
+
+.blogSmallCardTitle {
+  margin: 0;
+  color: #2c2f24;
+  font-family:
+    "DM Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  font-weight: 700;
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .blogFeaturedCard {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogSection {
+    padding: 60px 16px;
+  }
+
+  .blogHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .blogSmallCards {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+
+  .blogCardContent {
+    padding: 20px;
+  }
+
+  .blogSmallCard .blogCardContent {
+    padding: 16px;
+  }
+}

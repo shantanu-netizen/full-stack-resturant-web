@@ -1,0 +1,101 @@
+.section {
+  margin-top: 50px;
+  padding: 80px 20px;
+  background-color: #f9f9f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Left text part */
+.textColumn {
+  flex: 1;
+  min-width: 300px;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.45rem;
+  color: #2c2f24;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-family: "DM Sans", sans-serif;
+  color: #414536;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 400px;
+}
+
+/* Right grid part */
+.appsGrid {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  height: 80px;
+  border: 1px solid #f9f9f7;
+  box-shadow: 0px 2.98px 59.57px 0px #00000014;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.appName {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: normal;
+}
+.appContent {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+/* Response for smaller screens */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .subtitle {
+    margin: 0 auto;
+  }
+
+  .appsGrid {
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
