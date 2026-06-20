@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { serverUrl } from '../../../config.mjs'
-import CustomButton from '../button/CustomButton'
+import styles from './Auth.module.css'
 
 export default function Login() {
     const [formData, setformData] = useState({
@@ -34,7 +34,7 @@ export default function Login() {
                     return
                 }
                 localStorage.setItem('token', token)
-                navigate('/')
+                navigate('/home')
             } else {
                 setError(response.data.message || 'Login failed.')
             }
@@ -54,16 +54,41 @@ export default function Login() {
         }
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input type='email' name='email' placeholder='email' value={formData.email} onChange={handleChange} />
-                <input type='password' name='password' placeholder='password' value={formData.password} onChange={handleChange} />
-                {error && <p>{error}</p>}
-                <CustomButton btnTxt={busy ? "Signing in..." : "Login"} />
-            </form>
-            <p>
-                Don't have an account? <Link to="/signup">Sign Up</Link>
-            </p>
+        <div className={styles.page}>
+            <section className={styles.shell}>
+                <aside className={styles.brandPanel}>
+                    <div className={styles.brandBadge}>Bistro Bliss</div>
+                    <div className={styles.brandCopy}>
+                        <h1 className={styles.brandTitle}>Welcome back</h1>
+                        <p className={styles.brandText}>Sign in to manage bookings, browse fresh menus, and keep your restaurant plans moving.</p>
+                    </div>
+                </aside>
+
+                <main className={styles.formPanel}>
+                    <p className={styles.eyebrow}>Member access</p>
+                    <h2 className={styles.title}>Login</h2>
+                    <p className={styles.subtitle}>Use your registered email and password to continue.</p>
+
+                    <form className={styles.form} onSubmit={handleSubmit}>
+                        <div className={styles.field}>
+                            <label className={styles.label} htmlFor="email">Email address</label>
+                            <input className={styles.input} id="email" type='email' name='email' placeholder='you@example.com' value={formData.email} onChange={handleChange} />
+                        </div>
+
+                        <div className={styles.field}>
+                            <label className={styles.label} htmlFor="password">Password</label>
+                            <input className={styles.input} id="password" type='password' name='password' placeholder='Enter your password' value={formData.password} onChange={handleChange} />
+                        </div>
+
+                        {error && <p className={styles.error}>{error}</p>}
+                        <button className={styles.submitButton} type="submit" disabled={busy}>{busy ? "Signing in..." : "Login"}</button>
+                    </form>
+
+                    <p className={styles.switchText}>
+                        Don't have an account? <Link className={styles.switchLink} to="/signup">Sign Up</Link>
+                    </p>
+                </main>
+            </section>
         </div>
     )
 }

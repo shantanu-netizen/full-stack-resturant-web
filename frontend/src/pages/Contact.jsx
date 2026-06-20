@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
 import styles from "./Contact.module.css";
 import ContactNav from "../components/navbar/ContactNav";
 import MenuBar from "../components/navbar/MenuBar";
 import Footer from "../components/footer/Footer";
+import { serverUrl } from "../../config.mjs";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,22 +13,52 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    alert("Thank you for reaching out. We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setError("");
+    setSuccess("");
+
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      setError("Please fill all fields before sending your message.");
+      return;
+    }
+
+    try {
+      setBusy(true);
+      const response = await axios.post(
+        `${serverUrl}/contact`,
+        {
+          name: name.trim(),
+          email: email.trim(),
+          subject: subject.trim(),
+          message: message.trim(),
+        },
+        { headers: { "Content-Type": "application/json" } },
+      );
+
+      if (response.status === 201) {
+        setSuccess("Thank you for reaching out. We will get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message || "We could not send your message right now.");
+    } finally {
+      setBusy(false);
+    }
   };
 
   const { name, email, subject, message } = formData;
@@ -111,8 +143,11 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className={styles.submitButton}>
-                Send
+              {error && <p className={styles.errorMessage}>{error}</p>}
+              {success && <p className={styles.successMessage}>{success}</p>}
+
+              <button type="submit" className={styles.submitButton} disabled={busy}>
+                {busy ? "Sending..." : "Send"}
               </button>
             </form>
           </div>

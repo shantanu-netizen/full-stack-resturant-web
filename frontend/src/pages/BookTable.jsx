@@ -1,10 +1,12 @@
 import React, {useState} from "react";
+import axios from "axios";
 import styles from "./BookTable.module.css";
 import CustomButton from "../components/button/CustomButton";
 import map from "../assets/map.png";
 import ContactNav from "../components/navbar/ContactNav";
 import MenuBar from "../components/navbar/MenuBar";
 import Footer from "../components/footer/Footer";
+import {serverUrl} from "../../config.mjs";
 
 export default function BookTable() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,8 @@ export default function BookTable() {
     phone: "",
     person: "1 Person",
   });
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
 
   const timeOptions = ["06:30 PM", "07:00 PM", "07:30 PM", "08:00 PM"];
   const personOptions = ["1 Person", "2 Persons", "3 Persons", "4+ Persons"];
@@ -22,16 +26,39 @@ export default function BookTable() {
     setFormData({...formData, [e.target.id]: e.target.value});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Your table is booked");
-    setFormData({
-      date: "",
-      time: "06:30 PM",
-      name: "",
-      phone: "",
-      person: "1 Person",
-    });
+    setError("");
+
+    try {
+      setBusy(true);
+      const response = await axios.post(
+        `${serverUrl}/table`,
+        {
+          name: formData.name,
+          phone: formData.phone,
+          date: formData.date,
+          time: formData.time,
+          person: Number.parseInt(formData.person, 10),
+        },
+        {headers: {"Content-Type": "application/json"}},
+      );
+
+      if (response.status === 201) {
+        alert("Your table is booked");
+        setFormData({
+          date: "",
+          time: "06:30 PM",
+          name: "",
+          phone: "",
+          person: "1 Person",
+        });
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message || "We could not book your table right now.");
+    } finally {
+      setBusy(false);
+    }
   };
 
   const {date, time, name, phone, person} = formData;
@@ -112,7 +139,8 @@ export default function BookTable() {
             </div>
 
             <div className={styles.submitBtn}>
-              <CustomButton btnTxt="Book A Table" style={styles.fullWidthBtn} />
+              {error && <p>{error}</p>}
+              <CustomButton btnTxt={busy ? "Booking..." : "Book A Table"} style={styles.fullWidthBtn} />
             </div>
           </form>
         </div>

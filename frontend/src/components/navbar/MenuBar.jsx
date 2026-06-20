@@ -35,7 +35,7 @@ export default function MenuBar({title, userlogo, style}) {
         onClick={() => setIsOpen(false)}
       >
         <li className={styles.item}>
-          <Link to={"/"}>Home</Link>
+          <Link to={"/home"}>Home</Link>
         </li>
         <li className={styles.item}>
           <Link to={"/about"}>About</Link>

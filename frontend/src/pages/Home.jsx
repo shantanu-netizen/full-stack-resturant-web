@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../components/footer/Footer'
 
 import ContactNav from '../components/navbar/ContactNav'

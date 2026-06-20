@@ -47,7 +47,7 @@ export default function Footer() {
         <nav className={styles.linksCol} aria-label="Pages">
           <h3 className={styles.colTitle}>Pages</h3>
           <ul className={styles.linkList}>
-            <li><Link className={styles.footerLink} to="/">Home</Link></li>
+            <li><Link className={styles.footerLink} to="/home">Home</Link></li>
             <li><Link className={styles.footerLink} to="/about">About</Link></li>
             <li><Link className={styles.footerLink} to="/menu">Menu</Link></li>
             <li><Link className={styles.footerLink} to="/pricing">Pricing</Link></li>
