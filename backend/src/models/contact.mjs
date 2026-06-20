@@ -8,7 +8,6 @@ const contactSchema = mongoose.Schema(
     email: {
       type: String,
       required: [true, "Please enter your email"],
-      unique: true,
     },
     subject: {
       type: String,
@@ -19,7 +18,7 @@ const contactSchema = mongoose.Schema(
       required: [true, "Please enter your message"]
     },
   },
-  { timeStamp: true },
+  { timestamps: true },
 );
 const contactModel = mongoose.model("contact", contactSchema);
 export default contactModel;

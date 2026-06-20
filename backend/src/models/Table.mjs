@@ -1,27 +1,40 @@
 import mongoose from "mongoose";
+
 const tableSchema = mongoose.Schema(
   {
     name: {
       type: String,
+      trim: true,
       required: [true, "Please enter your name"],
     },
-    Phone: {
+    phone: {
       type: String,
+      trim: true,
       required: [true, "Please enter your phone"],
-      unique: true,
     },
-    Date: {
+    date: {
       type: Date,
+      required: [true, "Date for booking is required."],
     },
-    Time: {
-        type: Time,
+    time: {
+      type: String,
+      required: [true, "Time for Booking is required."],
+      enum: {
+        values: ["06:30 PM", "07:00 PM", "07:30 PM", "08:00 PM"],
+        message: "Only [06:30 PM, 07:00 PM, 07:30 PM, 08:00 PM] are booking timings",
+      },
     },
     person: {
-        type: Number,
-        enum:[1,2,3,4]
+      type: Number,
+      required: [true, "No of person is required."],
+      enum: {
+        values: [1, 2, 3, 4],
+        message: "Only Space for four persons",
+      },
     },
   },
-  { timeStamp: true },
+  { timestamps: true },
 );
+
 const tableModel = mongoose.model("table", tableSchema);
 export default tableModel;
